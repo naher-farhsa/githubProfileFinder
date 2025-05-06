@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Finder</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          animation: {
+            pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            highlight: 'highlight 1.5s ease-out'
+          },
+          keyframes: {
+            highlight: {
+              '0%': { 'box-shadow': '0 0 0 0 rgba(59, 130, 246, 0.7)' },
+              '70%': { 'box-shadow': '0 0 0 10px rgba(59, 130, 246, 0)' },
+              '100%': { 'box-shadow': '0 0 0 0 rgba(59, 130, 246, 0)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+</head>
+<body class="bg-gray-900 min-h-screen p-6">
+  <div class="max-w-2xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-gray-100">GitHub <span class="text-blue-400">Finder</span></h1>
+      <p class="text-gray-400">Search developer profiles</p>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="flex mb-8 bg-gray-800 rounded-lg shadow-lg overflow-hidden animate-highlight">
+      <input 
+        type="text" 
+        id="username" 
+        placeholder="Enter GitHub username..." 
+        class="flex-grow px-4 py-3 bg-gray-800 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+      <button 
+        id="search" 
+        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 transition flex items-center"
+      >
+        <i class="fas fa-search mr-2"></i> Search
+      </button>
+    </div>
+
+    <!-- GitHub Card -->
+    <div class=" card bg-gray-800  rounded-xl shadow-xl overflow-hidden border border-gray-700 hover:border-blue-400 transition-all duration-300">
+  
+    </div>
+  </div>
+
+  <!-- JS will be handled by you -->
+  <script src="script.js"></script>
+</body>
+</html>
